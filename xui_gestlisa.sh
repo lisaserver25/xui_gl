@@ -1,5 +1,5 @@
 # 1. Crear la carpeta
-mkdir -p /home/xui/api
+#mkdir -p /home/xui/api
 
 # 2. Crear el archivo PHP
 nano /home/xui/api/sync-user-to-redis.php
@@ -100,4 +100,5 @@ try {
 # 3. Establecer permisos correctos
 chmod 644 /home/xui/api/sync-user-to-redis.php
 chown www-data:www-data /home/xui/api/sync-user-to-redis.php
+
 chown www-data:www-data /home/xui/api
