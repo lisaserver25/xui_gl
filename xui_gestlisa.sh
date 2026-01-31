@@ -1,9 +1,10 @@
-# 1. Crear la carpeta
+#!/bin/bash
+
+# 1. Crear la carpeta si no existe
 #mkdir -p /home/xui/api
 
-# 2. Crear el archivo PHP
-nano /home/xui/api/sync-user-to-redis.php
-# (pegar el contenido del script PHP)
+# 2. Crear el archivo PHP volcando el contenido directamente
+cat << 'EOF' > /home/xui/api/sync-user-to-redis.php
 <?php
 // sync-user-to-redis.php
 // Endpoint para sincronizar usuario creado por Gestlisa a Redis
@@ -96,9 +97,11 @@ try {
     ]);
 }
 ?>
+EOF
 
 # 3. Establecer permisos correctos
 chmod 644 /home/xui/api/sync-user-to-redis.php
 chown www-data:www-data /home/xui/api/sync-user-to-redis.php
-
 chown www-data:www-data /home/xui/api
+
+echo "Proceso finalizado: Archivo creado y permisos aplicados."
